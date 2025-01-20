@@ -1,0 +1,94 @@
+<?PHP
+session_start();
+require_once "../../includes/conf_global.php";
+require_once "../../includes/class_database.php";
+$DB = new Database($gs_DBUser,$gs_DBPass,$gs_DBName);
+//print_r($_POST);
+
+$TYPE		= $_POST["TYPE"];
+$DATAID		= $_POST["DATAID"];
+$DATAID2	= $_POST["DATAID2"];
+$KODETK		= $_POST["KODETK"];
+$STATUSAPPROVAL		= $_POST["STATUSAPPROVAL"];
+$VERIFIKASITORAPPROVAL	= isset($_POST["VERIFIKASITORAPPROVAL"]) ? "Y" : "T";
+$JENISPENETAPANAPPROVAL	= $_POST["JENISPENETAPANAPPROVAL"];
+$KETERANGANAPPROVAL		= $_POST["KETERANGANAPPROVAL"];
+
+$ls_user_login = $_SESSION["USER"];
+$gs_kantor_aktif = $_SESSION['gs_kantor_aktif'];
+$ls_kode_kantor = isset($ls_kode_kantor) ? $ls_kode_kantor : $gs_kantor_aktif;
+
+$ls_kode_promotif					= $DATAID;
+$ls_verifikasi_tor_data				= isset($_POST["verifikasi_tor_data"]) ? "Y" : "T";
+$ls_keterangan_penetapan_kegiatan	= $_POST["keterangan_penetapan_kegiatan"];
+$ls_jenis_penetapan_kegiatan		= $_POST["jenis_penetapan_kegiatan"];
+
+
+if(($TYPE =='VIEW') && ($DATAID != ''))
+{
+	$sql = "select a.*,b.nama_kegiatan, c.nama_sub_kegiatan
+			from sijstk.pn_promotif a left join sijstk.pn_kode_promotif_kegiatan b on b.kode_kegiatan = a.kode_kegiatan
+			left join sijstk.pn_kode_promotif_sub c on c.kode_sub_kegiatan = a.kode_sub_kegiatan
+			where a.kode_kantor = '".$ls_kode_kantor."' and a.kode_promotif = '".$DATAID."'";		
+
+	$DB->parse($sql);
+	$DB->execute(); 
+	$i = 0;
+	$data = $DB->nextrow();
+	$jsondata = json_encode($data);
+	$jsondataStart = '{"ret":0,"count":0,"data":[';
+	$jsondata .= ']}';
+	$jsondata = $jsondataStart . ExtendedFunction::str_replace_json_nullable('"},]}', '"}]}', $jsondata);
+	$jsondata = str_replace('},]}', '}]}', $jsondata);
+	print_r($jsondata);
+
+} 
+else if(($TYPE =='EDIT') && ($DATAID != ''))
+{	
+	$sql = "update sijstk.pn_promotif 
+			set 
+			verifikasi_tor_data 			= '".$ls_verifikasi_tor_data."',
+			jenis_penetapan_kegiatan		= '".$ls_jenis_penetapan_kegiatan."',
+			tgl_penetapan_kegiatan 			= sysdate,
+			petugas_penetapan_kegiatan		= '".$ls_user_login."',
+			keterangan_penetapan_kegiatan	= '".$ls_keterangan_penetapan_kegiatan."',
+			tgl_ubah 						= sysdate,
+			petugas_ubah					= '".$ls_user_login."'
+			where kode_promotif = '".$DATAID."'";
+		
+	$DB->parse($sql);
+	if($DB->execute()){ 
+		echo '{"ret":0,"msg":"Sukses, entri verifikasi TOR dan penetapan kegiatan berhasil!"}';
+	} else {
+		echo '{"ret":-1,"msg":"Proses gagal, entri verifikasi TOR dan penetapan kegiatan tidak berhasil!"}';
+	}
+}
+else if(($TYPE =='APPROVE') && ($DATAID != ''))
+{	
+	$sql = "update sijstk.pn_promotif 
+			set status					= 'PENGAJUAN',
+			sub_status					= 'PENETAPAN_KEGIATAN',
+			verifikasi_tor_data 			= '".$VERIFIKASITORAPPROVAL."',
+			jenis_penetapan_kegiatan		= '".$JENISPENETAPANAPPROVAL."',
+			tgl_penetapan_kegiatan 			= sysdate,
+			petugas_penetapan_kegiatan		= '".$ls_user_login."',
+			keterangan_penetapan_kegiatan	= '".$KETERANGANAPPROVAL."',
+			tgl_submit_penetapan_kegiatan	= sysdate,
+			petugas_submit_penetapan_keg	= '".$ls_user_login."',
+			status_penetapan_kegiatan		= '".$STATUSAPPROVAL."',
+			tgl_ubah 					= sysdate,
+			petugas_ubah				= '".$ls_user_login."'
+			where kode_promotif = '".$DATAID."'";
+		 
+	$DB->parse($sql);
+	if($DB->execute()){ 
+		echo '{"ret":0,"msg":"Sukses, approval data verifikasi TOR dan penetapan kegiatan berhasil!"}';
+	} else {
+		echo '{"ret":-1,"msg":"Proses gagal, approval data verifikasi TOR dan penetapan kegiatan tidak berhasil!"}';
+	}
+}
+else
+{
+	echo '{"ret":-1,"msg":"Proses gagal"}';
+}	
+?>

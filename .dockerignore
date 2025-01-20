@@ -1,0 +1,9 @@
+.DS_Store
+.git
+.scannerwork
+docker-old
+public/.DS_Store
+.dockerignore
+.gitignore
+Dockerfile
+README.md

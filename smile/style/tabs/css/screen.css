@@ -1,0 +1,100 @@
+/* ------------------------------
+Struktur Halaman
+------------------------------ */
+body{
+	color:#696969;
+	background:#E5E5E5;
+}
+#container {
+	margin:auto;
+	margin-top:60px;
+	width:600px;
+	display:block;
+}
+div.clear{
+	clear:both;
+}
+h1{
+	font-size:1.9em;
+	color:#494949;
+}
+h2{
+	font-size:1.6em;
+}
+a{
+	color:#29b8f3;
+	text-decoration:none;
+}
+a:hover{
+	color:#D65703;
+}
+#footer{
+	padding:5px 20px;
+	text-align:right;
+}
+/* ------------------------------
+Konten = Tabs + Konten Tab
+------------------------------ */
+#konten{
+	padding: 5px !important;
+    background: #fff;
+    color: #555;
+    min-width: 965px;
+	min-height:100px;
+    display: table;
+    border: 1px solid #add2ed;
+	border-top: 5px solid #add2ed;
+}
+#konten p{
+	text-indent:15px;
+	line-height:165%;
+}
+/* ------------------------------
+Navigasi Tabs
+------------------------------ */
+ul#nav {
+	/*padding:20px 5px 10px 0;*/
+	/*padding:1px 1px 1px 0;*/
+}
+ul#nav li{
+	display:inline;
+	float:left;
+	position:relative;
+	margin-right:5px;
+}
+ul#nav li img{
+margin-left: 8px;padding: 0;position: absolute;margin-top: 9px;
+}
+ul#nav li span.tabicon {
+	margin-left: 8px;padding: 0;position: absolute;margin-top: 9px;
+	width:16px; height:16px;
+	display:block;
+    background-image: url(../../../images/application_view_columns.png) !important;
+}
+ul#nav li a{
+	background:#4B9CD7;
+	padding-left: 30px;
+    padding-top: 9px;
+    padding-bottom: 5px;
+	padding-right: 15px;
+	color:#FFF;
+	text-decoration:none;
+	font-weight:bold !important;
+	display: block;
+	font:13px/1.231 helvetica,arial,verdana,sans-serif;
+	border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+ul#nav li a:hover{
+	background:#64AEE4;
+	text-decoration:none;
+	border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+ul#nav li a.active, ul#nav li a.active:hover{
+	background:#ADD2ED;
+	display: block;
+	color:#157FCC;
+	border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}

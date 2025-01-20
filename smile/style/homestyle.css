@@ -1,0 +1,260 @@
+html {
+	background:		#28396d url(../images/bg_bodyhome.gif) top left repeat-x;
+	color:	#fff;
+	font: 76% Arial, Helvetica, sans-serif;
+	text-align:				center;	
+}
+
+
+html, body {
+	margin:					0;
+	padding:				0;
+}
+
+body {
+	text-align:				left;
+	width:					925px;
+	margin:					0 auto;
+}
+
+a {
+	outline:				0;
+	color:#09F;
+	text-decoration:none;
+}
+
+a:hover{
+	color:#CFF;}
+
+img {
+	margin:					0;
+	padding:				0;
+	border:					0;
+}
+
+#masthead {
+	text-align:			center;
+	width:					925px;
+	margin:					0 auto;
+}
+
+#home_header {
+	clear: both;
+	margin:0;
+	padding:30px 0 5px 10px;
+	background: url(../images/bg_headerhome.jpg) top center no-repeat;
+}
+
+#login {
+	float:					right;
+	height:					35px;
+	line-height:			40px;
+	color:#395199;
+}
+
+input.logintxt {
+    margin:1px;
+	padding:2px;
+	border:1px solid #395199;
+	background-color:#2f4380;
+	color:#CCC;
+}
+
+/*-------------------------------------
+   menu atas
+--------------------------------------*/
+#container_menu {
+	/*background:	#df1919 url(../images/nav_bg.gif) top left no-repeat;*/
+	border-top: 1px solid #19254d;
+	text-align: left;
+	margin: 0;
+	width:100%;
+	font-size:13px;
+	height:35px;
+}
+
+#nav, #nav ul {
+	float: left;
+	list-style: none;
+	line-height: 1;
+	font-weight: bold;
+	padding: 0px 0 0 15px;
+	border: solid 0px #eda;
+	margin: 5px 0 5px 0;
+}
+
+#container_menu ul ul {
+	float: left;
+	list-style: none;
+	line-height: 1;
+	padding: 0px 0 0 0px;
+	border: solid 0px #eda;
+	margin: 5px 0 0px 0;
+}
+
+#nav a {
+	display: block;
+	text-decoration: none;
+	padding: 5px 20px 5px 20px;
+	color: #395199;
+}
+
+#nav a.daddy {
+  width: 115px;
+	background: url(../images/right_arrow.gif) center right no-repeat; 
+}
+
+
+#nav li {
+	float: left;
+	padding: 0;
+	/*background:	transparent url(../images/site_nav_borders.gif) bottom right no-repeat;*/
+}
+
+
+#nav li:hover, #nav li.sfhover {
+	background: #121b39;
+}
+
+#nav li.current {
+	background: #fff;
+}
+
+
+/*  Structure */
+#wrapperWit { 
+	margin:0; padding: 12px 12px 0px 12px;
+	width: 901px;
+	background: #121b39;
+	}
+
+#home_footer {
+	margin:0;
+	padding:0;
+	height:12px;
+	background: transparent url(../images/bg_homewrap_footer.png) bottom left no-repeat;
+}
+
+#home_copyright {
+	margin:0;
+	padding:10px;
+	height:12px;
+	font-size:11px;
+}
+
+.line1{
+	float:left;
+	width:400px;
+	}
+	
+	.line2{
+	float:right;
+	width:400px;
+	text-align:right;
+	}
+
+
+#info_container{
+	width: 901px;
+	padding: 0;
+	margin: 0;
+}
+
+.home_news {
+	padding: 10px 0 5px 10px;
+	width: 350px;
+	float: left;
+}
+
+.home_about{
+	float: right;
+	width: 500px;
+	padding: 10px 10px 5px 10px;
+
+}
+
+/*
+Tabs - not important for accessibility, just for the look of it...
+*/
+#tab_container {
+	background: url(../images/home_banner_bg.png) top left no-repeat;
+	width: 901px;
+	padding: 0;
+	margin: 0;
+	min-height:362px;
+}
+
+.seckiri {	
+        margin:20px 10px 0 20px;
+		width:380px;
+		height:250px;
+		overflow:hidden;
+		float:left;
+		color:#8aa2f1;
+		}
+
+.seckiri p{
+	margin: 60px 0 0 20px;
+	padding:0;
+	}
+	
+.tabdeposito {
+	background: url(../images/titletab_deposito.jpg) top left no-repeat;
+	}
+.tabobligasi {
+	background: url(../images/titletab_obligasi.jpg) top left no-repeat;
+	}
+.tabreksadana {
+	background: url(../images/titletab_reksadana.jpg) top left no-repeat;
+	}
+.tabsaham {
+	background: url(../images/titletab_saham.jpg) top left no-repeat;
+	}
+.tabproperty {
+	background: url(../images/titletab_property.jpg) top left no-repeat;
+	}
+	
+.seckanan {
+	    margin:10px 10px 0 0;
+		width:480px;
+		height:260px;
+		float:right;
+		color:#8aa2f1;
+		overflow:hidden;
+		}
+
+.fragment1,.fragment2,.fragment3,.fragment4,.fragment5 { min-height: 277px;}
+.fragment2,.fragment3,.fragment4,.fragment5 { display:none;}
+
+.anchors {list-style: none; margin: 0; padding: 0; height: 85px;}
+.anchors li { margin: 0; float: left;}
+
+/* attaching active state to background of li for pre-loading */
+.anchors .tab1 {	background: url(../images/tab1_hover.png) top left no-repeat; width: 189px;}
+.anchors .tab2 {	background: url(../images/tab2_hover.png) top left no-repeat; width: 175px;}
+.anchors .tab3 {	background: url(../images/tab3_hover.png) top left no-repeat; width: 175px;}
+.anchors .tab4 {	background: url(../images/tab4_hover.png) top left no-repeat; width: 175px;}
+.anchors .tab5 {	background: url(../images/tab5_hover.png) top left no-repeat; width: 187px;}
+
+.anchors a {display: block; position: relative; top: 0px; left:0; z-index: 2; padding: 0px; color: #000; height: 85px;}
+
+/* Tab Rollovers */
+.anchors .tab1 a:link, .anchors .tab1 a:visited { background: url(../images/tab1_normal.png) top left no-repeat; width: 189px; position:static;}
+.anchors .tab2 a:link, .anchors .tab2 a:visited { background: url(../images/tab2_normal.png) top left no-repeat;width: 175px;position:static;}
+.anchors .tab3 a:link, .anchors .tab3 a:visited { background: url(../images/tab3_normal.png) top left no-repeat;width: 175px;position:static;}
+.anchors .tab4 a:link, .anchors .tab4 a:visited { background: url(../images/tab4_normal.png) top left no-repeat;width: 175px;position:static;}
+.anchors .tab5 a:link, .anchors .tab5 a:visited { background: url(../images/tab5_normal.png) top left no-repeat;width: 187px;position:static;}
+
+.anchors .tab1 a:hover { background: url(../images/tab1_hover.png) top left no-repeat; width: 189px; position:static;}
+.anchors .tab2 a:hover { background: url(../images/tab2_hover.png) top left no-repeat;width: 175px;position:static;}
+.anchors .tab3 a:hover { background: url(../images/tab3_hover.png) top left no-repeat;width: 175px;position:static;}
+.anchors .tab4 a:hover { background: url(../images/tab4_hover.png) top left no-repeat;width: 175px;position:static;}
+.anchors .tab5 a:hover { background: url(../images/tab5_hover.png) top left no-repeat;width: 187px;position:static;}
+
+/* Makes the text disappear */
+.anchors span {display:block;height:0;width:0; overflow: hidden;font-size: 1px;color: #3B88AF;}
+.anchors .tabOn1 {	background: url(../images/tab1_active.png) top left no-repeat; width: 189px;}
+.anchors .tabOn2 {	background: url(../images/tab2_active.png) top left no-repeat; width: 175px;}
+.anchors .tabOn3 {	background: url(../images/tab3_active.png) top left no-repeat; width: 175px;}
+.anchors .tabOn4 {	background: url(../images/tab4_active.png) top left no-repeat; width: 175px;}
+.anchors .tabOn5 {	background: url(../images/tab5_active.png) top left no-repeat; width: 187px;}

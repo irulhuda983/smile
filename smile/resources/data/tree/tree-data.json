@@ -1,0 +1,7 @@
+{ 
+text: '.',
+children: [{
+    text:'Pilih role untuk melihat menu',
+	iconCls: 'menu-help'
+}]
+}

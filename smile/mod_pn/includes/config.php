@@ -1,0 +1,39 @@
+<?php
+// SAAT INI MASIH KOSONG
+$CONFIG_GLOBAL["REPORTCLEARANCE"]    = "";
+$CONFIG_GLOBAL["WS_JSOPG"]           = "";
+$CONFIG_GLOBAL["WS_TEST"]            = "";
+$CONFIG_GLOBAL["PERISAI"] 			 = "https://perisai-dev.bpjs.go.id";
+$CONFIG_GLOBAL["LOCALHOST"]          = "";
+$CONFIG_GLOBAL["JSCORE"]             = "";
+$CONFIG_GLOBAL["WS_LAPAKASIK"]       = "";
+$CONFIG_GLOBAL["SRC_TEST"]           = "";
+$CONFIG_GLOBAL["DB_SIJSTKOLAP"]      = "";
+$CONFIG_GLOBAL["RPT_PIUTANG"]        = "";
+$CONFIG_GLOBAL["LOCALHOST_8080"]     = "";
+$CONFIG_GLOBAL["WSCOM"]              = "";
+$CONFIG_GLOBAL["SSO_APP"]            = "";
+$CONFIG_GLOBAL["IP_RPT_DEV"]         = "";
+$CONFIG_GLOBAL["WS_NEP"]             = "";
+$CONFIG_GLOBAL["WS_IPSTORAGE"]       = "";
+$CONFIG_GLOBAL["WS_VOKASI"]          = "";
+$CONFIG_GLOBAL["IP_APPS70"]          = "";
+$CONFIG_GLOBAL["WS_TEST2"]           = "";
+$CONFIG_GLOBAL["WS_TEST1"]           = "";
+$CONFIG_GLOBAL["WS_LPK"]             = "";
+$CONFIG_GLOBAL["IP_APPS157"]         = "";
+$CONFIG_GLOBAL["IP_APPS101"]         = "";
+$CONFIG_GLOBAL["DB_SIJSTKECHA"]      = "";
+$CONFIG_GLOBAL["WS_DOCUMENT"]        = "";
+$CONFIG_GLOBAL["WS_GOOGLEMAPS"]      = "";
+$CONFIG_GLOBAL["WS_CEPHSTORAGE"]     = "";
+$CONFIG_GLOBAL["WS_REPORT_EC"]       = "";
+$CONFIG_GLOBAL["LOCALHOST_PLAIN"]    = "";
+$CONFIG_GLOBAL["IP_APPS60"]          = "";
+$CONFIG_GLOBAL["IP_APPS62"]          = "";
+$CONFIG_GLOBAL["WS_PMI"]             = "";
+$CONFIG_GLOBAL["IP_APPS_EKLAIM"]     = "";
+$CONFIG_GLOBAL["IP_APPS95"]          = "";
+$CONFIG_GLOBAL["WS_AXIS"]            = "";
+$CONFIG_GLOBAL["IP_APP80"]           = "";
+?>

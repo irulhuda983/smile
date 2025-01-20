@@ -1,0 +1,51 @@
+name: smile-app
+
+services:
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 9000:9000
+    volumes:
+      - ./smile:/var/www/html/smile:cached
+    networks:
+      - net-cont-smile
+
+  web:
+    image: nginx
+    ports:
+      - 8123:8123
+    volumes:
+      - ./smile:/var/www/html/smile
+      - .docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+      # - .docker/nginx/nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - php
+    networks:
+      - net-cont-smile
+
+  oracle:
+      image: oraclelinux:8
+      environment:
+        - ORACLE_SID=sijstk
+        - ORACLE_PDB=smile
+        - ORACLE_PWD=welcome1
+      ports:
+        - 1521:1521
+      networks:
+        - net-cont-smile
+
+networks:
+  net-cont-smile:
+    driver: bridge
+  # db:
+  #   image: mariadb:latest
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: root_password
+  #     MYSQL_DATABASE: my_database
+  #     MYSQL_USER: my_user
+  #     MYSQL_PASSWORD: my_password
+  #   ports:
+  #     - "3306:3306"
+  #   container_name: mariadb
